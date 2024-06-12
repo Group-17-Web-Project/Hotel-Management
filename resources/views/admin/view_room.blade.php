@@ -44,6 +44,7 @@
                         <th class="th_deg">Room Type</th>
                         <th class="th_deg">Image</th>
                         <th class="th_deg">Delete</th>
+                        <th class="th_deg">Update</th>
                     </tr>
                     @foreach($data as $data)
                     <tr>
@@ -57,6 +58,9 @@
                         </td>
                         <td>
                             <a onclick="return confirm('Are you sure to delete this room ?')" class="btn btn-danger" href="{{url('room_delete',$data->id)}}">Delete</a>
+                        </td>
+                        <td>
+                            <a onclick="" class="btn btn-warning" href="{{url('room_update',$data->id)}}">Update</a>
                         </td>
                     </tr>
                     @endforeach
