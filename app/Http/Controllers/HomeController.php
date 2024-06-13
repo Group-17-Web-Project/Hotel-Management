@@ -32,13 +32,28 @@ class HomeController extends Controller
 
         $data->phone = $request-> phone ;
 
-        $data->start_date = $request-> startDate ;
 
-        $data->end_date = $request-> endDate ;
 
-        $data->save();
+        $startDate = $request-> startDate ;
 
-        return redirect()->back()->with('message','Room Booked Sucessfully');
+        $endDate = $request-> endDate ;
 
+        $isBooked = Booking::where('room_id','$id')
+        ->where('start_date','<=',$endDate)
+        ->where('end_date','>=',$startDate)->exists();
+
+        if($isBooked){
+            return redirect()->back()->with('message','Room is already booked please try different date');
+        }
+        else{
+            $data->start_date = $request-> startDate ;
+
+            $data->end_date = $request-> endDate ;
+
+            $data->save();
+
+            return redirect()->back()->with('message','Room Booked Successfully');
+
+        }
     }
 }
