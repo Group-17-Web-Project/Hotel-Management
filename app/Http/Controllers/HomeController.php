@@ -15,8 +15,9 @@ class HomeController extends Controller
     }
 
 
-    public function add_booking(Request $request , $id){
-        
+    public function add_booking(Request $request, $id)
+    {
+
         $request->validate([
             'startDate' => 'required|date',
             'endDate' => 'date|after:startDate',
@@ -26,34 +27,32 @@ class HomeController extends Controller
 
         $data->room_id = $id;
 
-        $data->name = $request-> name ;
+        $data->name = $request->name;
 
-        $data->email = $request-> email ;
+        $data->email = $request->email;
 
-        $data->phone = $request-> phone ;
+        $data->phone = $request->phone;
 
 
 
-        $startDate = $request-> startDate ;
+        $startDate = $request->startDate;
 
-        $endDate = $request-> endDate ;
+        $endDate = $request->endDate;
 
-        $isBooked = Booking::where('room_id','$id')
-        ->where('start_date','<=',$endDate)
-        ->where('end_date','>=',$startDate)->exists();
+        $isBooked = Booking::where('room_id', $id)
+            ->where('start_date', '<=', $endDate)
+            ->where('end_date', '>=', $startDate)->exists();
 
-        if($isBooked){
-            return redirect()->back()->with('message','Room is already booked please try different date');
-        }
-        else{
-            $data->start_date = $request-> startDate ;
+        if ($isBooked) {
+            return redirect()->back()->with('message', 'Room is already booked please try different date');
+        } else {
+            $data->start_date = $request->startDate;
 
-            $data->end_date = $request-> endDate ;
+            $data->end_date = $request->endDate;
 
             $data->save();
 
-            return redirect()->back()->with('message','Room Booked Successfully');
-
+            return redirect()->back()->with('message', 'Room Booked Successfully');
         }
     }
 }
