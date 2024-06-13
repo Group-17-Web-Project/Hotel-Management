@@ -38,7 +38,7 @@ class HomeController extends Controller
 
         $endDate = $request-> endDate ;
 
-        $isBooked = Booking::where('room_id','$id')
+        $isBooked = Booking::where('room_id',$id)
         ->where('start_date','<=',$endDate)
         ->where('end_date','>=',$startDate)->exists();
 
