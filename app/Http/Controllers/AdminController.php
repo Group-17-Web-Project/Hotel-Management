@@ -8,6 +8,8 @@ use App\Models\User;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\Room;
+use App\Models\Booking;
+use App\Models\Gallary;
 
 class AdminController extends Controller
 {
@@ -84,6 +86,56 @@ class AdminController extends Controller
         }
 
         $data->save();
+        return redirect()->back();
+    }
+    public function bookings()
+    {
+        $data = Booking::all();
+        return view('admin.booking', compact('data'));
+    }
+    public function delete_booking($id)
+    {
+        $data = Booking::find($id);
+        $data->delete();
+        return redirect()->back();
+    }
+    public function approve_book($id)
+    {
+        $booking = Booking::find($id);
+        $booking->status = 'approve';
+        $booking->save();
+        return redirect()->back();
+    }
+    public function reject_book($id)
+    {
+        $booking = Booking::find($id);
+        $booking->status = 'rejected';
+        $booking->save();
+        return redirect()->back();
+    }
+
+    public function view_gallary()
+    {
+        $gallary = Gallary::all();
+        return view('admin.gallary', compact('gallary'));
+    }
+    public function upload_gallary(Request $request)
+    {
+        $data = new Gallary;
+        $image = $request->image;
+        if ($image) {
+            $imagename = time() . '.' . $image->getClientOriginalExtension();
+            $request->image->move('gallary', $imagename);
+            $data->image = $imagename;
+            $data->save();
+            return redirect()->back();
+        }
+    }
+
+    public function delete_gallary($id)
+    {
+        $data = Gallary::find($id);
+        $data->delete();
         return redirect()->back();
     }
 }

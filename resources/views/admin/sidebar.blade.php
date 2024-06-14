@@ -20,6 +20,8 @@
                     <li><a href="#">Page</a></li>
                 </ul>
             </li>
+            <li><a href="{{url('bookings')}}"> <i class="icon-home"></i>Bookings</a></li>
+            <li><a href="{{url('view_gallary')}}"> <i class="icon-home"></i>Gallary</a></li>
 
         </ul>
     </nav>
