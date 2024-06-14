@@ -33,8 +33,6 @@ class HomeController extends Controller
 
         $data->phone = $request->phone;
 
-
-
         $startDate = $request->startDate;
 
         $endDate = $request->endDate;
