@@ -12,16 +12,11 @@
         <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
         <ul class="list-unstyled">
             <li class="active"><a href="index.html"> <i class="icon-home"></i>Home </a></li>
-
-            <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Hotel Rooms </a>
-                <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                    <li><a href="{{url('create_room')}}">Add Rooms</a></li>
-                    <li><a href="{{url('view_room')}}">View Rooms</a></li>
-                    <li><a href="#">Page</a></li>
-                </ul>
-            </li>
             <li><a href="{{url('bookings')}}"> <i class="icon-home"></i>Bookings</a></li>
             <li><a href="{{url('view_gallary')}}"> <i class="icon-home"></i>Gallary</a></li>
+            <li><a href="{{url('create_room')}}"><i class="icon-home"></i>Add Rooms</a></li>
+            <li><a href="{{url('view_room')}}"><i class="icon-home"></i>View Rooms</a></li>
+            <li><a href="#"><i class="icon-home"></i>Page</a></li>
 
         </ul>
     </nav>
