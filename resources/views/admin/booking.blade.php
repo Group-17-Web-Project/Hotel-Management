@@ -63,13 +63,13 @@
                         <td>{{$data->end_date}}</td>
                         <td>
                             @if($data->status== 'approve')
-                            <span style="color:blue;">Approved</span>
+                            <span style="color:green;">Approved</span>
                             @endif
                             @if($data->status== 'rejected')
                             <span style="color:red;">Rejected</span>
                             @endif
                             @if($data->status== 'waiting')
-                            <span style="color:white;">Waiting</span>
+                            <span style="color:yellow;">Waiting</span>
                             @endif
                         </td>
                         <td>{{$data->room->room_title}}</td>
