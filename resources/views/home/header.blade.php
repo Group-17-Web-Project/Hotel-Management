@@ -18,11 +18,11 @@
                </button>
                <div class="" id="navbarsExample04">
                   <ul class="navbar-nav mr-auto">
-                     <li class="nav-item active">
+                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/')}}">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="{{'about_hotel'}}">About</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="{{url('our_rooms')}}">Our Room</a>

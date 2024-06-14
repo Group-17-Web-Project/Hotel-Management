@@ -82,4 +82,7 @@ class HomeController extends Controller
     {
         return view('home.contact_us');
     }
+    public function about_hotel(){
+        return view('home.about_hotel');
+    }
 }
