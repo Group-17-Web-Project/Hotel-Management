@@ -41,6 +41,9 @@
                         <th class="th_deg">Description</th>
                         <th class="th_deg">Price</th>
                         <th class="th_deg">Wifi</th>
+                        <th class="th_deg">Bathroom</th>
+                        <th class="th_deg">Bed</th>
+                        <th class="th_deg">People</th>
                         <th class="th_deg">Room Type</th>
                         <th class="th_deg">Image</th>
                         <th class="th_deg">Delete</th>
@@ -52,6 +55,9 @@
                         <td>{!! Str::limit($data->description,150) !!}</td>
                         <td>{{$data->price}}</td>
                         <td>{{$data->wifi}}</td>
+                        <td>{{$data->n_bathroom}}</td>
+                        <td>{{$data->n_bed}}</td>
+                        <td>{{$data->n_people}}</td>
                         <td>{{$data->room_type}}</td>
                         <td>
                             <img width="100" src="room/{{$data->image}}" alt="">

@@ -29,7 +29,7 @@ class AdminController extends Controller
             if ($usertype == 'user') {
                 $room = Room::all();
                 $gallary = Gallary::all();
-                return view('home.index', compact('room','gallary'));
+                return view('home.index', compact('room', 'gallary'));
             } else if ($usertype == 'admin') {
                 return view('admin.index');
             } else {
@@ -43,7 +43,7 @@ class AdminController extends Controller
 
         $gallary = Gallary::all();
 
-        return view('home.index', compact('room','gallary'));
+        return view('home.index', compact('room', 'gallary'));
     }
     public function create_room()
     {
@@ -56,6 +56,9 @@ class AdminController extends Controller
         $data->description = $request->description;
         $data->price = $request->price;
         $data->wifi = $request->wifi;
+        $data->n_bathroom = $request->n_bathroom;
+        $data->n_bed = $request->n_bed;
+        $data->n_people = $request->n_people;
         $data->room_type = $request->type;
         $image = $request->image;
         if ($image) {
@@ -87,8 +90,11 @@ class AdminController extends Controller
         $data = Room::find($id);
         $data->room_title = $request->title;
         $data->description = $request->description;
-        $data->wifi = $request->price;
-        $data->price = $request->wifi;
+        $data->wifi = $request->wifi;
+        $data->n_bathroom = $request->n_bathroom;
+        $data->n_bed = $request->n_bed;
+        $data->n_people = $request->n_people;
+        $data->price = $request->price;
         $data->room_type = $request->type;
         $image = $request->image;
         if ($image) {
@@ -152,16 +158,16 @@ class AdminController extends Controller
     }
     public function all_messages()
     {
-        $data = Contact::all(); 
-        return view('admin.all_message',compact('data'));
+        $data = Contact::all();
+        return view('admin.all_message', compact('data'));
     }
     public function send_mail($id)
     {
         $data = Contact::find($id);
-        
-        return view('admin.send_mail',compact('data'));
+
+        return view('admin.send_mail', compact('data'));
     }
-    public function mail(Request $request , $id)
+    public function mail(Request $request, $id)
     {
         $data = Contact::find($id);
 
@@ -173,8 +179,8 @@ class AdminController extends Controller
             'action_text' => $request->action_text,
 
             'action_url' => $request->action_url,
-            
-            'endline' => $request->endline,            
+
+            'endline' => $request->endline,
 
         ];
 

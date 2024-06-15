@@ -60,6 +60,27 @@
                             </select>
                         </div>
                         <div class="dev_deg">
+                            <label for="">Bathroom</label>
+                            <select name="n_bathroom" id="">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                        <div class="dev_deg">
+                            <label for="">Bed</label>
+                            <select name="n_bed" id="">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                        <div class="dev_deg">
+                            <label for="">People</label>
+                            <select name="n_people" id="">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                        <div class="dev_deg">
                             <label>Upload Image</label>
                             <input type="file" name="image">
                         </div>

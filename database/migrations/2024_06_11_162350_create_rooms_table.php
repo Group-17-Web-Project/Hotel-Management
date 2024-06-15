@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->string('price')->nullable();
             $table->string('wifi')->default('yes');
+            $table->string('n_bathroom')->nullable();
+            $table->string('n_bed')->nullable();
+            $table->string('n_people')->nullable();
             $table->string('room_type')->nullable();
 
             $table->timestamps();

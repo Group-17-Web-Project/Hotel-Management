@@ -62,6 +62,30 @@
                             </select>
                         </div>
                         <div class="dev_deg">
+                            <label for="">Bathroom</label>
+                            <select name="n_bathroom" id="">
+                                <option value="{{$data->n_bathroom}}">{{$data->n_bathroom}}</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                        <div class="dev_deg">
+                            <label for="">Beds</label>
+                            <select name="n_bed" id="">
+                                <option value="{{$data->n_bed}}">{{$data->n_bed}}</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                        <div class="dev_deg">
+                            <label for="">People</label>
+                            <select name="n_people" id="">
+                                <option value="{{$data->n_people}}">{{$data->n_people}}</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                        <div class="dev_deg">
                             <label>Current Image</label>
                             <img style="margin:auto;" width=" 100" src=" /room/{{$data->image}}" alt="">
                         </div>
