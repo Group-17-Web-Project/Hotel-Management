@@ -47,7 +47,7 @@ class HomeController extends Controller
             ->where('end_date', '>=', $startDate)->exists();
 
         if ($isBooked) {
-            return redirect()->back()->with('message', 'Room is already booked please try different date');
+            return redirect()->back()->with('message', 'Thời gian này phòng đã được đặt hãy chọn thời gian khác');
         } else {
             $data->start_date = $request->startDate;
 
@@ -55,7 +55,7 @@ class HomeController extends Controller
 
             $data->save();
 
-            return redirect()->back()->with('message', 'Room Booked Successfully');
+            return redirect()->back()->with('message', 'Đặt phòng thành công');
         }
     }
     public function contact(Request $request)

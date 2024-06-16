@@ -19,19 +19,19 @@
                <div class="" id="navbarsExample04">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item">
-                        <a class="nav-link" href="{{url('/')}}">Home</a>
+                        <a class="nav-link" href="{{url('/')}}">Trang chủ</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="{{'about_hotel'}}">About</a>
+                        <a class="nav-link" href="{{'about_hotel'}}">Thông tin</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="{{url('our_rooms')}}">Our Room</a>
+                        <a class="nav-link" href="{{url('our_rooms')}}">Đặt phòng</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="{{url('hotel_gallary')}}">Gallery</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="{{url('contact_us')}}">Contact Us</a>
+                        <a class="nav-link" href="{{url('contact_us')}}">Liên hệ</a>
                      </li>
                      @if (Route::has('login'))
                      @auth

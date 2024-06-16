@@ -35,8 +35,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="titlepage">
-                        <h2>Our Room</h2>
-                        <p>Booking Room Now</p>
+                        <h2>Thông tin chi tiết</h2>
+                        <p></p>
                     </div>
                 </div>
             </div>
@@ -45,24 +45,33 @@
                 <div class="col-md-8">
                     <div id="serv_hover" class="room">
                         <div style="padding: 20px;" class="room_img">
-                            <img style="height:300px; width:100%" src="/room/{{$room->image}}" alt=" #" />
+                            <img style="height:500px; width:100%" src="/room/{{$room->image}}" alt=" #" />
                         </div>
                         <div class="bed_room">
 
-                            <h2>{{$room->room_title}}</h2>
+                            <p style="font-size: 25px;margin-bottom:30px">{{$room->room_title}}</p>
                             <p style="padding: 12px;">{{$room->description}}</p>
-                            <h4 style="padding: 12px;">Free wifi : {{$room->wifi}}</h4>
-                            <h3 style="padding: 12px;">Room Type : {{$room->room_type}}</h3>
-                            <h3 id="roomPrice" style="padding: 12px;">Price : {{$room->price}} Per night</h3>
-                            <h3 style="padding: 12px;">Numbers of Bathrooms: {{$room->n_bathroom}}</h3>
-                            <h3 style="padding: 12px;">Numbers of Beds: {{$room->n_bed}}</h3>
-                            <h3 style="padding: 12px;">Number of Peoples: {{$room->n_people}}</h3>
-                            <div id="totalPrice" style="font-size:20px; margin-top:20px;">Total: </div>
+                            <hr width="100%" style="margin-top: 20px;">
+                            <p style=" font-size: 25px;margin-top:20px">Tổng quan về phòng</p>
+                            <div style="margin-top:20px;display:flex;justify-content: space-between;
+">
+
+                                <h4>Wifi miễn phí : {{$room->wifi}}</h4>
+                                <h4>Loại phòng : {{$room->room_type}}</h4>
+                                <h4 id="roomPrice">Giá phòng : {{$room->price}}/Đêm</h4>
+                            </div>
+                            <div style="margin-top:20px;display:flex;justify-content: space-between;">
+                                <h4>Số nhà tắm: {{$room->n_bathroom}}</h4>
+                                <h4>Số giường ngủ: {{$room->n_bed}}</h4>
+                                <h4>Sức chứa: {{$room->n_people}} người</h4>
+
+                            </div>
+                            <d id="totalPrice" style="font-size:20px;font-weight:700 ;margin-top:20px;">Tổng giá tiền: </d>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <h1 style="font-size:40px !important">Book Room</h1>
+                    <h1 style="font-size:40px !important">Đặt phòng</h1>
                     <div>
                         @if(session()->has('message'))
                         <div class="alert alert-success">
@@ -83,7 +92,7 @@
                     <form id="bookingForm" action="{{url('add_booking', $room->id)}}" method="Post">
                         @csrf
                         <div>
-                            <label for="">Name</label>
+                            <label for="">Họ và tên</label>
                             <input type="text" name="name" @if(Auth::id()) value="{{Auth::user()->name}}" @endif>
                         </div>
                         <div>
@@ -91,20 +100,20 @@
                             <input type="email" name="email" @if(Auth::id()) value="{{Auth::user()->email}}" @endif>
                         </div>
                         <div>
-                            <label for="">Phone</label>
+                            <label for="">Số điện thoại</label>
                             <input type="number" name="phone" @if(Auth::id()) value="{{Auth::user()->phone}}" @endif>
                         </div>
                         <div>
-                            <label for="">Start Date</label>
+                            <label for="">Ngày nhận phòng</label>
                             <input type="date" name="startDate" id="startDate">
                         </div>
                         <div>
-                            <label for="">End Date</label>
+                            <label for="">Ngày trả phòng</label>
                             <input type="date" name="endDate" id="endDate">
                         </div>
-                        <div style="padding-top:20px">
-                            <input type="button" style="background-color: skyblue;" class="btn btn-primary" value="Calculate Price" id="calculatePriceButton">
-                            <input type="submit" style="background-color: skyblue;" class="btn btn-primary" value="Book Room" id="submitButton" style="display:none;">
+                        <div style="padding-top:20px;display:flex">
+                            <input type="button" style="background-color: #ffff99;color:black" class="btn btn-primary" value="Tính giá phòng" id="calculatePriceButton">
+                            <input type="submit" style="background-color: skyblue;" class="btn btn-primary" value="Đặt phòng" id="submitButton" style="display:none;">
                         </div>
                     </form>
                 </div>
@@ -155,7 +164,7 @@
                         }
                     });
                 } else {
-                    alert('Please select both start and end dates.');
+                    alert('Hãy chọn ngày nhận và trả phòng');
                 }
             });
         });
