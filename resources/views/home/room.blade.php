@@ -22,7 +22,7 @@
                   <p style="text-align:start">{{$rooms->n_bathroom}} Phòng tắm</p>
                   <p style="text-align:start">{{$rooms->n_bed}} Giường</p>
                   <p style="text-align:start">{{$rooms->n_people}} Người</p>
-                  <p style="font-weight:700;font-size:20px">{{$rooms->price}}/Đêm</p>
+                  <p style="font-weight:700;font-size:20px">{{$rooms->price}}$/Đêm</p>
                   <a class="btn btn-primary mt-5" href="{{url('room_details',$rooms->id)}}">Xem chi tiết</a>
                </div>
             </div>
