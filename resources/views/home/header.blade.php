@@ -34,7 +34,7 @@
                         <a class="nav-link" href="{{url('contact_us')}}">Liên hệ</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="{{url('services')}}">Tiệc cưới,Hội nghị</a>
+                        <a class="nav-link" href="{{url('services')}}">Dịch vụ</a>
                      </li>
                      @if (Route::has('login'))
                      @auth
@@ -42,12 +42,12 @@
                      </x-app-layout>
                      @else
                      <li class="nav-item pr-2">
-                        <a class="btn btn-success" href="{{url('login')}}">Login</a>
+                        <a class="btn btn-success" href="{{url('login')}}">Đăng nhập</a>
                      </li>
 
                      @if (Route::has('register'))
                      <li class="nav-item">
-                        <a class="btn btn-primary" href="{{url('register')}}">Register</a>
+                        <a class="btn btn-primary" href="{{url('register')}}">Đăng ký</a>
                      </li>
                      @endif
                      @endauth

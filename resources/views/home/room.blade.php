@@ -12,7 +12,7 @@
          @foreach($room as $rooms)
 
 
-         <div class="col-md-4 col-sm-6" style="height:500px">
+         <div class="col-md-4 col-sm-6" style="height:500px;">
             <div id="serv_hover" class="room">
                <div class="room_img">
                   <img style="height:200px; width:100%" src="room/{{$rooms->image}}" alt="#" />
