@@ -58,7 +58,7 @@
 
                                 <h4>Wifi miễn phí : {{$room->wifi}}</h4>
                                 <h4>Loại phòng : {{$room->room_type}}</h4>
-                                <h4 id="roomPrice">Giá phòng : {{$room->price}}/Đêm</h4>
+                                <h4 id="roomPrice">Giá phòng : {{$room->price}}$/Đêm</h4>
                             </div>
                             <div style="margin-top:20px;display:flex;justify-content: space-between;">
                                 <h4>Số nhà tắm: {{$room->n_bathroom}}</h4>
@@ -143,7 +143,7 @@
                 var endDate = $('#endDate').val();
                 var priceText = $('#roomPrice').text();
                 var price = parseFloat(priceText.match(/\d+/)[0]);
-                console.log('price: ', price);
+                console.log('price: ', price, );
 
 
                 if (startDate && endDate) {
