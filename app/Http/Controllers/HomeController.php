@@ -7,6 +7,9 @@ use App\Models\Room;
 use App\Models\Booking;
 use App\Models\Contact;
 use App\Models\Gallary;
+use Carbon\Carbon;
+use Psy\Readline\Hoa\Console;
+use SebastianBergmann\CodeCoverage\Report\Xml\Totals;
 
 class HomeController extends Controller
 {
@@ -39,9 +42,9 @@ class HomeController extends Controller
 
         $endDate = $request->endDate;
 
-        $isBooked = Booking::where('room_id',$id)
-        ->where('start_date','<=',$endDate)
-        ->where('end_date','>=',$startDate)->exists();
+        $isBooked = Booking::where('room_id', $id)
+            ->where('start_date', '<=', $endDate)
+            ->where('end_date', '>=', $startDate)->exists();
 
         if ($isBooked) {
             return redirect()->back()->with('message', 'Room is already booked please try different date');
@@ -58,31 +61,60 @@ class HomeController extends Controller
     public function contact(Request $request)
     {
         $contact = new Contact;
-        
+
         $contact->name = $request->name;
         $contact->email = $request->email;
-        $contact->phone= $request->phone;
+        $contact->phone = $request->phone;
         $contact->message = $request->message;
 
         $contact->save();
 
-        return redirect()->back()->with('message','Message Sent Successfully');
+        return redirect()->back()->with('message', 'Message Sent Successfully');
     }
     public function our_rooms()
     {
         $room = Room::all();
-        return view('home.our_rooms',compact('room'));
+        return view('home.our_rooms', compact('room'));
     }
     public function hotel_gallary()
     {
         $gallary = Gallary::all();
-        return view('home.hotel_gallary',compact('gallary'));
+        return view('home.hotel_gallary', compact('gallary'));
     }
     public function contact_us()
     {
         return view('home.contact_us');
     }
-    public function about_hotel(){
+    public function about_hotel()
+    {
         return view('home.about_hotel');
+    }
+
+    //handle price
+    public function calculatePrice(Request $request)
+    {
+
+
+        // $room = Room::find($roomId);
+
+        // Xác thực các ngày nhập vào
+        $request->validate([
+            'startDate' => 'required|date|after_or_equal:today',
+            'endDate' => 'required|date|after_or_equal:startDate',
+            'price' => 'required|numeric',
+        ]);
+
+        // Phân tích các ngày
+        $startDate = Carbon::parse($request->startDate);
+        $endDate = Carbon::parse($request->endDate);
+
+        // Tính số ngày
+        $numberOfDays = $endDate->diffInDays($startDate) + 1;
+
+        // Tính tổng giá tiền
+        $totalPrice = $request->price * $numberOfDays;
+
+
+        return response()->json(['totalPrice' => $totalPrice]);
     }
 }
