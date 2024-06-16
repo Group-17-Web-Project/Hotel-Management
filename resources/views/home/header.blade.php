@@ -33,6 +33,9 @@
                      <li class="nav-item">
                         <a class="nav-link" href="{{url('contact_us')}}">Liên hệ</a>
                      </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="{{url('services')}}">Tiệc cưới,Hội nghị</a>
+                     </li>
                      @if (Route::has('login'))
                      @auth
                      <x-app-layout>

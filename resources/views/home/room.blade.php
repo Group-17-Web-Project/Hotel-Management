@@ -3,8 +3,7 @@
       <div class="row">
          <div class="col-md-12">
             <div class="titlepage">
-               <h2>Our Room</h2>
-               <p>Lorem Ipsum available, but the majority have suffered </p>
+               <h2>Đặt phòng</h2>
             </div>
          </div>
       </div>
@@ -20,11 +19,11 @@
                </div>
                <div class="bed_room">
                   <h3>{{$rooms->room_title}}</h3>
-                  <p style="text-align:start">{{$rooms->n_bathroom}} Bathooms</p>
-                  <p style="text-align:start">{{$rooms->n_bed}} Beds</p>
-                  <p style="text-align:start">{{$rooms->n_people}} Peoples</p>
-                  <p style="font-weight:700;font-size:20px">{{$rooms->price}} Per night</p>
-                  <a class="btn btn-primary mt-5" href="{{url('room_details',$rooms->id)}}">Room Detail</a>
+                  <p style="text-align:start">{{$rooms->n_bathroom}} Phòng tắm</p>
+                  <p style="text-align:start">{{$rooms->n_bed}} Giường</p>
+                  <p style="text-align:start">{{$rooms->n_people}} Người</p>
+                  <p style="font-weight:700;font-size:20px">{{$rooms->price}}/Đêm</p>
+                  <a class="btn btn-primary mt-5" href="{{url('room_details',$rooms->id)}}">Xem chi tiết</a>
                </div>
             </div>
          </div>

@@ -89,7 +89,10 @@ class HomeController extends Controller
     {
         return view('home.about_hotel');
     }
-
+    public function services()
+    {
+        return view('home.services');
+    }
     //handle price
     public function calculatePrice(Request $request)
     {
