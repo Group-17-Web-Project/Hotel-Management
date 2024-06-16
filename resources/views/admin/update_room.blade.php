@@ -28,23 +28,23 @@
         <div class="page-header">
             <div class="container-fluid">
                 <div class="div_center">
-                    <h1 style="font-size: 30px; font-weigh:bold;">Update Room</h1>
+                    <h1 style="font-size: 30px; font-weigh:bold;">Cập nhật phòng</h1>
                     <form action="{{url('edit_room',$data->id)}}" method="Post" enctype="multipart/form-data">
                         @csrf
                         <div class="dev_deg">
-                            <label for="">Room Title</label>
+                            <label for="">Tiêu đề phòng</label>
                             <input type="text" name="title" id="" value="{{$data->room_title}}">
                         </div>
                         <div class="dev_deg">
-                            <label for="">Description</label>
+                            <label for="">Nội dung</label>
                             <textarea name="description" id="">{{$data->description}}</textarea>
                         </div>
                         <div class="dev_deg">
-                            <label for="">Price</label>
+                            <label for="">Giá phòng</label>
                             <input type="number" name="price" id="" value="{{$data->price}}">
                         </div>
                         <div class="dev_deg">
-                            <label for="">Room Type</label>
+                            <label for="">Loại phòng</label>
                             <select name="type" id="">
                                 <option value="{{$data->room_type}}">{{$data->room_type}}</option>
                                 <option value="regular">Regular</option>
@@ -54,15 +54,15 @@
                             </select>
                         </div>
                         <div class="dev_deg">
-                            <label for="">Free Wifi</label>
+                            <label for="">Wifi miễn phí</label>
                             <select name="wifi" id="">
                                 <option value="{{$data->wifi}}">{{$data->wifi}}</option>
-                                <option value="yes">yes</option>
-                                <option value="no">No</option>
+                                <option value="yes">Có</option>
+                                <option value="no">Không</option>
                             </select>
                         </div>
                         <div class="dev_deg">
-                            <label for="">Bathroom</label>
+                            <label for="">Số nhà tắm</label>
                             <select name="n_bathroom" id="">
                                 <option value="{{$data->n_bathroom}}">{{$data->n_bathroom}}</option>
                                 <option value="1">1</option>
@@ -70,7 +70,7 @@
                             </select>
                         </div>
                         <div class="dev_deg">
-                            <label for="">Beds</label>
+                            <label for="">Số giường</label>
                             <select name="n_bed" id="">
                                 <option value="{{$data->n_bed}}">{{$data->n_bed}}</option>
                                 <option value="1">1</option>
@@ -78,7 +78,7 @@
                             </select>
                         </div>
                         <div class="dev_deg">
-                            <label for="">People</label>
+                            <label for="">Số người</label>
                             <select name="n_people" id="">
                                 <option value="{{$data->n_people}}">{{$data->n_people}}</option>
                                 <option value="1">1</option>
@@ -86,15 +86,15 @@
                             </select>
                         </div>
                         <div class="dev_deg">
-                            <label>Current Image</label>
+                            <label>Ảnh hiện tại</label>
                             <img style="margin:auto;" width=" 100" src=" /room/{{$data->image}}" alt="">
                         </div>
                         <div class="dev_deg">
-                            <label>Upload Image</label>
+                            <label>Tải ảnh</label>
                             <input type="file" name="image">
                         </div>
                         <div class="dev_deg">
-                            <input class="btn btn-primary" type="submit" value="Update Room">
+                            <input class="btn btn-primary" type="submit" value="Cập nhật">
                         </div>
                     </form>
                 </div>

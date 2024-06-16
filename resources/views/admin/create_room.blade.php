@@ -28,23 +28,23 @@
         <div class="page-header">
             <div class="container-fluid">
                 <div class="div_center">
-                    <h1 style="font-size: 30px; font-weigh:bold;">Add Rooms</h1>
+                    <h1 style="font-size: 30px; font-weigh:bold;">Thêm phòng</h1>
                     <form action="{{url('add_room')}}" method="Post" enctype="multipart/form-data">
                         @csrf
                         <div class="dev_deg">
-                            <label for="">Room Title</label>
+                            <label for="">Tên phòng</label>
                             <input type="text" name="title" id="">
                         </div>
                         <div class="dev_deg">
-                            <label for="">Description</label>
+                            <label for="">Nội dung</label>
                             <textarea name="description" id=""></textarea>
                         </div>
                         <div class="dev_deg">
-                            <label for="">Price</label>
+                            <label for="">Giá phòng</label>
                             <input type="number" name="price" id="">
                         </div>
                         <div class="dev_deg">
-                            <label for="">Room Type</label>
+                            <label for="">Loại phòng</label>
                             <select name="type" id="">
                                 <option value="regular">Regular</option>
                                 <option value="premium">Premium</option>
@@ -53,39 +53,39 @@
                             </select>
                         </div>
                         <div class="dev_deg">
-                            <label for="">Free Wifi</label>
+                            <label for="">Wifi miễn phí</label>
                             <select name="wifi" id="">
-                                <option value="yes">yes</option>
-                                <option value="no">No</option>
+                                <option value="yes">Có</option>
+                                <option value="no">Không</option>
                             </select>
                         </div>
                         <div class="dev_deg">
-                            <label for="">Bathroom</label>
+                            <label for="">Nhà tắm</label>
                             <select name="n_bathroom" id="">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                             </select>
                         </div>
                         <div class="dev_deg">
-                            <label for="">Bed</label>
+                            <label for="">Số Giường</label>
                             <select name="n_bed" id="">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                             </select>
                         </div>
                         <div class="dev_deg">
-                            <label for="">People</label>
+                            <label for="">Số người</label>
                             <select name="n_people" id="">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                             </select>
                         </div>
                         <div class="dev_deg">
-                            <label>Upload Image</label>
+                            <label>Tải ảnh</label>
                             <input type="file" name="image">
                         </div>
                         <div class="dev_deg">
-                            <input class="btn btn-primary" type="submit" value="Add Room">
+                            <input class="btn btn-primary" type="submit" value="Thêm phòng">
                         </div>
                     </form>
                 </div>

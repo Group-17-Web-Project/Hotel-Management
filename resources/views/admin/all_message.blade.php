@@ -31,16 +31,16 @@
     @include('admin.header')
     @include('admin.sidebar')
     <!-- Sidebar Navigation end-->
-     <div class="page-content">
+    <div class="page-content">
         <div class="page-header">
             <div class="container-fluid">
-            <table class="table_deg">
+                <table class="table_deg">
                     <tr>
-                        <th class="th_deg">Name</th>
+                        <th class="th_deg">Tên</th>
                         <th class="th_deg">Email</th>
-                        <th class="th_deg">Phone</th>
-                        <th class="th_deg">Message</th>
-                        <th class="th_deg">Send Email</th>
+                        <th class="th_deg">Điện thoại</th>
+                        <th class="th_deg">Lời nhắn</th>
+                        <th class="th_deg">Gửi Email</th>
                     </tr>
                     @foreach($data as $data)
                     <tr>
@@ -49,14 +49,14 @@
                         <td>{{$data->phone}}</td>
                         <td>{{$data->message}}</td>
                         <td>
-                            <a class="btn btn-success" href="{{(url('send_mail',$data->id))}}">Send Mail</a>
+                            <a class="btn btn-success" href="{{(url('send_mail',$data->id))}}">Gửi Mail</a>
                         </td>
                     </tr>
                     @endforeach
                 </table>
             </div>
         </div>
-     </div>
+    </div>
     @include('admin.footer')
 </body>
 

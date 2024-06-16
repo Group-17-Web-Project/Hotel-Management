@@ -37,17 +37,17 @@
             <div class="container-fluid">
                 <table class="table_deg">
                     <tr>
-                        <th class="th_deg">Room Title</th>
-                        <th class="th_deg">Description</th>
-                        <th class="th_deg">Price</th>
+                        <th class="th_deg">Tên phòng</th>
+                        <th class="th_deg">Nội dung</th>
+                        <th class="th_deg">Giá phòng</th>
                         <th class="th_deg">Wifi</th>
-                        <th class="th_deg">Bathroom</th>
-                        <th class="th_deg">Bed</th>
-                        <th class="th_deg">People</th>
-                        <th class="th_deg">Room Type</th>
-                        <th class="th_deg">Image</th>
-                        <th class="th_deg">Delete</th>
-                        <th class="th_deg">Update</th>
+                        <th class="th_deg">Nhà tắm</th>
+                        <th class="th_deg">Giường</th>
+                        <th class="th_deg">Số người</th>
+                        <th class="th_deg">Loại phòng</th>
+                        <th class="th_deg">Hình ảnh</th>
+                        <th class="th_deg">Xoá</th>
+                        <th class="th_deg">Cập nhật</th>
                     </tr>
                     @foreach($data as $data)
                     <tr>
@@ -63,10 +63,10 @@
                             <img width="100" src="room/{{$data->image}}" alt="">
                         </td>
                         <td>
-                            <a onclick="return confirm('Are you sure to delete this room ?')" class="btn btn-danger" href="{{url('room_delete',$data->id)}}">Delete</a>
+                            <a onclick="return confirm('Are you sure to delete this room ?')" class="btn btn-danger" href="{{url('room_delete',$data->id)}}">Xoá</a>
                         </td>
                         <td>
-                            <a onclick="" class="btn btn-warning" href="{{url('room_update',$data->id)}}">Update</a>
+                            <a onclick="" class="btn btn-warning" href="{{url('room_update',$data->id)}}">Cập nhật</a>
                         </td>
                     </tr>
                     @endforeach

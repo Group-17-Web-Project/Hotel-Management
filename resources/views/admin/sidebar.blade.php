@@ -11,12 +11,12 @@
         </div>
         <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
         <ul class="list-unstyled">
-            <li><a href="/home"> Home </a></li>
-            <li><a href="{{url('view_room')}}">View Rooms</a></li>
+            <li><a href="/home">Trang chủ </a></li>
+            <li><a href="{{url('view_room')}}">Xem phòng</a></li>
             <li><a href="{{url('view_gallary')}}"> Gallary</a></li>
-            <li><a href="{{url('bookings')}}"> Bookings</a></li>
-            <li><a href="{{url('create_room')}}">Add Rooms</a></li>
-            <li><a href="{{url('all_messages')}}">Messages</a></li>
+            <li><a href="{{url('bookings')}}">Phòng khách đặt</a></li>
+            <li><a href="{{url('create_room')}}">Thêm phòng</a></li>
+            <li><a href="{{url('all_messages')}}">Tin nhắn</a></li>
 
         </ul>
     </nav>

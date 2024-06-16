@@ -26,7 +26,7 @@
                         @foreach($gallary as $gallary)
                         <div class="col-md-4">
                             <img style="height: 200px!important;width:300px!important" src="/gallary/{{$gallary->image}}" alt="">
-                            <a class="btn btn-danger" href="{{url('delete_gallary',$gallary->id)}}">Delete Image</a>
+                            <a class="btn btn-danger" href="{{url('delete_gallary',$gallary->id)}}">Xoá ảnh</a>
                         </div>
                         @endforeach
                     </div>
@@ -34,10 +34,10 @@
                         @csrf
 
                         <div style="padding: 30px;">
-                            <label style="color:white;font-weight:bold" for="">Upload Image</label>
+                            <label style="color:white;font-weight:bold" for="">Thêm ảnh</label>
                             <input type="file" name="image" required>
 
-                            <input class="btn btn-primary" type="submit" value="Add image">
+                            <input class="btn btn-primary" type="submit" value="Thêm">
                         </div>
                     </form>
                 </center>
